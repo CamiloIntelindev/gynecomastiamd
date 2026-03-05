@@ -5,21 +5,24 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const apiEndpoint = process.env.NEXT_PUBLIC_API_ENDPOINT;
-
-    if (!apiEndpoint) {
-      return Response.json(
-        { error: 'API endpoint not configured' },
-        { status: 500 }
-      );
+    if (!process.env.NEXT_PUBLIC_API_ENDPOINT) {
+      throw new Error('NEXT_PUBLIC_API_ENDPOINT is not configured');
     }
 
-    const pages = await fetchWordPressAPI(
-      `${apiEndpoint}${ENDPOINTS.PAGES}`,
-      PAGE_QUERY_PARAMS
+    const queryParams = new URLSearchParams();
+    Object.entries(PAGE_QUERY_PARAMS).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        value.forEach(v => queryParams.append(key, v));
+      } else {
+        queryParams.append(key, String(value));
+      }
+    });
+
+    const data = await fetchWordPressAPI(
+      `${ENDPOINTS.PAGES}?${queryParams.toString()}`
     );
 
-    return Response.json({ data: pages, error: null });
+    return Response.json({ data, error: null });
   } catch (error) {
     console.error('Error fetching pages:', error);
     return Response.json(

@@ -13,7 +13,6 @@ interface MenuItem {
 export default function Header() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchMenu = async () => {

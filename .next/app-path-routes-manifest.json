@@ -1,5 +1,10 @@
 {
   "/_not-found/page": "/_not-found",
+  "/api/pages/route": "/api/pages",
+  "/api/pages/[id]/route": "/api/pages/[id]",
+  "/api/posts/[id]/route": "/api/posts/[id]",
+  "/api/menu/route": "/api/menu",
   "/api/posts/route": "/api/posts",
+  "/[slug]/page": "/[slug]",
   "/page": "/"
 }
