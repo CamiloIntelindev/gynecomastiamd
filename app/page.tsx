@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import { fetchWordPressAPI } from '@/lib/graphql';
 import { ENDPOINTS } from '@/lib/queries';
 
+// Force dynamic rendering to ensure environment variables are available at request time
+export const dynamic = 'force-dynamic';
+
 interface PostItem {
   id: number;
   title: {
