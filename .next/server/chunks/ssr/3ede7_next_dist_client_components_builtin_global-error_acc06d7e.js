@@ -1,0 +1,3 @@
+module.exports=[88333,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(13087);a.n(d("[project]/Documents/Projects/gynecomastiamd/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},45067,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(13087);a.n(d("[project]/Documents/Projects/gynecomastiamd/node_modules/next/dist/client/components/builtin/global-error.js"))},3707,a=>{"use strict";a.i(88333);var b=a.i(45067);a.n(b)}];
+
+//# sourceMappingURL=3ede7_next_dist_client_components_builtin_global-error_acc06d7e.js.map

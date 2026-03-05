@@ -1,0 +1,35 @@
+{
+  "name": "gynecomastiamd",
+  "version": "1.0.0",
+  "description": "Sitio médico sobre ginecomastia. Frontend Next.js 15 que consume WPGraphQL de WordPress",
+  "main": "next.config.ts",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamiloIntelindev/gynecomastiamd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/CamiloIntelindev/gynecomastiamd/issues"
+  },
+  "homepage": "https://github.com/CamiloIntelindev/gynecomastiamd#readme",
+  "dependencies": {
+    "@apollo/client": "^4.1.6",
+    "@types/node": "^25.3.3",
+    "@types/react": "^19.2.14",
+    "dotenv": "^17.3.1",
+    "graphql": "^16.13.1",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5.9.3"
+  }
+}

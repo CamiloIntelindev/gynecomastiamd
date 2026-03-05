@@ -1,0 +1,3 @@
+module.exports=[54907,a=>{"use strict";var b=a.i(80687);function c({children:a}){return(0,b.jsx)("html",{lang:"es",children:(0,b.jsxs)("body",{children:[(0,b.jsx)("header",{style:{padding:"1rem",borderBottom:"1px solid #ccc"},children:(0,b.jsx)("h1",{children:"GynecomastiadMD"})}),(0,b.jsx)("main",{style:{padding:"2rem"},children:a})]})})}a.s(["default",()=>c,"metadata",0,{title:"GynecomastiadMD",description:"Sitio médico sobre ginecomastia"}])}];
+
+//# sourceMappingURL=Documents_Projects_gynecomastiamd_app_layout_tsx_a5aed607._.js.map
