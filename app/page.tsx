@@ -52,8 +52,8 @@ export default function Home() {
 
   return (
     <div>
-      <h1>¡Hola Mundo! 👋</h1>
-      <p>Bienvenido a GynecomastiadMD - Sitio construido con Next.js</p>
+      <h1>Hello World! 👋</h1>
+      <p>Welcome to GynecomastiadMD - Built with Next.js</p>
 
       <section
         style={{
@@ -63,9 +63,9 @@ export default function Home() {
           borderRadius: '8px',
         }}
       >
-        <h2>Prueba de Conexión REST API</h2>
+        <h2>REST API Connection Test</h2>
 
-        {loading && <p>🔄 Cargando posts desde WordPress...</p>}
+        {loading && <p>🔄 Loading posts from WordPress...</p>}
 
         {error && (
           <div
@@ -80,7 +80,7 @@ export default function Home() {
               <strong>❌ Error:</strong> {error}
             </p>
             <details>
-              <summary>Ver detalles</summary>
+              <summary>View details</summary>
               <pre
                 style={{
                   marginTop: '0.5rem',
@@ -88,11 +88,11 @@ export default function Home() {
                   overflow: 'auto',
                 }}
               >
-                Asegúrate de que:
-                1. El endpoint REST está correcto:{' '}
+                Make sure that:
+                1. The REST endpoint is correct:{' '}
                 {process.env.NEXT_PUBLIC_API_ENDPOINT}
-                2. Las credenciales están configuradas en .env.local
-                3. El usuario {'{'}API_USERNAME{'}'} tiene permisos para leer posts
+                2. Credentials are configured in .env.local
+                3. The user {'{'}API_USERNAME{'}'} has permission to read posts
               </pre>
             </details>
           </div>
@@ -100,7 +100,7 @@ export default function Home() {
 
         {posts && posts.length > 0 && (
           <div style={{ color: '#2e7d32' }}>
-            <p>✅ Conexión exitosa con WordPress REST API</p>
+            <p>✅ Successfully connected to WordPress REST API</p>
             <div
               style={{
                 marginTop: '1rem',
@@ -110,7 +110,7 @@ export default function Home() {
                 border: '1px solid #4caf50',
               }}
             >
-              <h3>Posts Recientes ({posts.length})</h3>
+              <h3>Recent Posts ({posts.length})</h3>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {posts.map((post) => (
                   <li
@@ -122,7 +122,7 @@ export default function Home() {
                   >
                     <strong>{post.title.rendered}</strong>
                     <p style={{ margin: '0.25rem 0', fontSize: '0.9rem', color: '#666' }}>
-                      {post.slug} - {new Date(post.date).toLocaleDateString('es-ES')}
+                      {post.slug} - {new Date(post.date).toLocaleDateString('en-US')}
                     </p>
                     <p
                       style={{
@@ -142,20 +142,20 @@ export default function Home() {
         )}
 
         {!loading && !error && posts.length === 0 && (
-          <p>ℹ️ No hay posts disponibles en el sitio</p>
+          <p>ℹ️ No posts available on the site</p>
         )}
       </section>
 
       <section style={{ marginTop: '2rem' }}>
-        <h2>Próximos Pasos</h2>
+        <h2>Next Steps</h2>
         <ul>
-          <li>✅ Proyecto Next.js con TypeScript configurado</li>
-          <li>✅ Cliente REST API listo para consultas</li>
-          <li>✅ Conexión con WordPress REST API funcionando</li>
-          <li>⏳ Crear componentes para posts individuales</li>
-          <li>⏳ Implementar páginas dinámicas</li>
-          <li>⏳ Agregar búsqueda y filtros</li>
-          <li>⏳ Desplegar en Vercel</li>
+          <li>✅ Next.js project with TypeScript configured</li>
+          <li>✅ REST API client ready for queries</li>
+          <li>✅ WordPress REST API connection working</li>
+          <li>⏳ Create components for individual posts</li>
+          <li>⏳ Implement dynamic pages</li>
+          <li>⏳ Add search and filters</li>
+          <li>⏳ Deploy to Vercel</li>
         </ul>
       </section>
     </div>

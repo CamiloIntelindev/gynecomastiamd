@@ -1,5 +1,5 @@
 /**
- * Cliente REST API de WordPress para consumir posts, páginas y otros contenidos
+ * WordPress REST API client for fetching posts, pages and other content
  */
 
 export interface WordPressError {
@@ -16,7 +16,7 @@ export interface WordPressResponse<T> {
 }
 
 /**
- * Hacer una request a la API REST de WordPress con autenticación Basic
+ * Make a request to the WordPress REST API with Basic authentication
  */
 export async function fetchWordPressAPI<T>(
   endpoint: string,
@@ -35,7 +35,7 @@ export async function fetchWordPressAPI<T>(
     ...(options.headers as Record<string, string>),
   };
 
-  // Agregar autenticación Basic si están disponibles las credenciales
+  // Add Basic authentication if credentials are available
   if (process.env.API_USERNAME && process.env.API_PASSWORD) {
     const credentials = btoa(`${process.env.API_USERNAME}:${process.env.API_PASSWORD}`);
     headers['Authorization'] = `Basic ${credentials}`;

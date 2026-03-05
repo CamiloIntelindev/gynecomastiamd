@@ -314,3 +314,10 @@ Import traces:
     ./Documents/Projects/gynecomastiamd/app/page.tsx [Server Component]
 [00:09:40.669] Server  LOG     ✓ Compiled in 38ms
 [00:09:56.745] Server  LOG     ✓ Compiled in 33ms
+[00:12:12.402] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:54.441] Server  LOG     ✓ Compiled in 17ms
+[00:14:59.078] Server  LOG     ✓ Compiled in 6ms
+[00:15:03.061] Server  LOG     ✓ Compiled in 10ms
+[00:15:03.306] Server  LOG     ✓ Compiled in 27ms
+[00:15:08.802] Server  LOG     ✓ Compiled in 9ms
+[00:15:12.390] Server  LOG       Reload env: .env.local

@@ -3,7 +3,7 @@
 "use strict";
 
 /**
- * Cliente REST API de WordPress para consumir posts, páginas y otros contenidos
+ * WordPress REST API client for fetching posts, pages and other content
  */ __turbopack_context__.s([
     "fetchWordPressAPI",
     ()=>fetchWordPressAPI
@@ -18,7 +18,7 @@ async function fetchWordPressAPI(endpoint, options = {}) {
         'Content-Type': 'application/json',
         ...options.headers
     };
-    // Agregar autenticación Basic si están disponibles las credenciales
+    // Add Basic authentication if credentials are available
     if (__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.API_USERNAME && __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.API_PASSWORD) {
         const credentials = btoa(`${__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.API_USERNAME}:${__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.API_PASSWORD}`);
         headers['Authorization'] = `Basic ${credentials}`;
@@ -47,7 +47,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 "use strict";
 
 /**
- * Endpoints y parámetros de la API REST de WordPress
+ * Endpoints and parameters for the WordPress REST API
  */ __turbopack_context__.s([
     "ENDPOINTS",
     ()=>ENDPOINTS,
@@ -145,14 +145,14 @@ function Home() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                children: "¡Hola Mundo! 👋"
+                children: "Hello World! 👋"
             }, void 0, false, {
                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                 lineNumber: 55,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                children: "Bienvenido a GynecomastiadMD - Sitio construido con Next.js"
+                children: "Welcome to GynecomastiadMD - Built with Next.js"
             }, void 0, false, {
                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                 lineNumber: 56,
@@ -167,14 +167,14 @@ function Home() {
                 },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        children: "Prueba de Conexión REST API"
+                        children: "REST API Connection Test"
                     }, void 0, false, {
                         fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                         lineNumber: 66,
                         columnNumber: 9
                     }, this),
                     loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        children: "🔄 Cargando posts desde WordPress..."
+                        children: "🔄 Loading posts from WordPress..."
                     }, void 0, false, {
                         fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                         lineNumber: 68,
@@ -208,7 +208,7 @@ function Home() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("details", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("summary", {
-                                        children: "Ver detalles"
+                                        children: "View details"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                         lineNumber: 83,
@@ -221,14 +221,14 @@ function Home() {
                                             overflow: 'auto'
                                         },
                                         children: [
-                                            "Asegúrate de que: 1. El endpoint REST está correcto:",
+                                            "Make sure that: 1. The REST endpoint is correct:",
                                             ' ',
                                             ("TURBOPACK compile-time value", "https://gynecomastiamd.com/wp-json/wp/v2"),
-                                            "2. Las credenciales están configuradas en .env.local 3. El usuario ",
+                                            "2. Credentials are configured in .env.local 3. The user ",
                                             '{',
                                             "API_USERNAME",
                                             '}',
-                                            " tiene permisos para leer posts"
+                                            " has permission to read posts"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
@@ -253,7 +253,7 @@ function Home() {
                         },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                children: "✅ Conexión exitosa con WordPress REST API"
+                                children: "✅ Successfully connected to WordPress REST API"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 103,
@@ -270,7 +270,7 @@ function Home() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         children: [
-                                            "Posts Recientes (",
+                                            "Recent Posts (",
                                             posts.length,
                                             ")"
                                         ]
@@ -306,7 +306,7 @@ function Home() {
                                                         children: [
                                                             post.slug,
                                                             " - ",
-                                                            new Date(post.date).toLocaleDateString('es-ES')
+                                                            new Date(post.date).toLocaleDateString('en-US')
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
@@ -351,7 +351,7 @@ function Home() {
                         columnNumber: 11
                     }, this),
                     !loading && !error && posts.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        children: "ℹ️ No hay posts disponibles en el sitio"
+                        children: "ℹ️ No posts available on the site"
                     }, void 0, false, {
                         fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                         lineNumber: 145,
@@ -369,7 +369,7 @@ function Home() {
                 },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        children: "Próximos Pasos"
+                        children: "Next Steps"
                     }, void 0, false, {
                         fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                         lineNumber: 150,
@@ -378,49 +378,49 @@ function Home() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                children: "✅ Proyecto Next.js con TypeScript configurado"
+                                children: "✅ Next.js project with TypeScript configured"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 152,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                children: "✅ Cliente REST API listo para consultas"
+                                children: "✅ REST API client ready for queries"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 153,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                children: "✅ Conexión con WordPress REST API funcionando"
+                                children: "✅ WordPress REST API connection working"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 154,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                children: "⏳ Crear componentes para posts individuales"
+                                children: "⏳ Create components for individual posts"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 155,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                children: "⏳ Implementar páginas dinámicas"
+                                children: "⏳ Implement dynamic pages"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 156,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                children: "⏳ Agregar búsqueda y filtros"
+                                children: "⏳ Add search and filters"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 157,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$Projects$2f$gynecomastiamd$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                children: "⏳ Desplegar en Vercel"
+                                children: "⏳ Deploy to Vercel"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/Projects/gynecomastiamd/app/page.tsx",
                                 lineNumber: 158,

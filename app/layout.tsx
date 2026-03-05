@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "GynecomastiadMD",
-  description: "Sitio médico sobre ginecomastia",
+  description: "Medical site specializing in gynecomastia",
 };
 
 export default function RootLayout({
@@ -11,7 +11,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body>
         <header style={{ padding: "1rem", borderBottom: "1px solid #ccc" }}>
           <h1>GynecomastiadMD</h1>

@@ -1,5 +1,5 @@
 /**
- * Endpoints y parámetros de la API REST de WordPress
+ * Endpoints and parameters for the WordPress REST API
  */
 
 export const ENDPOINTS = {
@@ -10,7 +10,7 @@ export const ENDPOINTS = {
 };
 
 /**
- * Parámetros comunes para queries de posts
+ * Common parameters for posts queries
  */
 export const POST_QUERY_PARAMS = {
   per_page: 10,
@@ -20,7 +20,7 @@ export const POST_QUERY_PARAMS = {
 };
 
 /**
- * Parámetros para obtener un post individual
+ * Parameters for fetching a single post
  */
 export const SINGLE_POST_QUERY_PARAMS = {
   _fields: [
