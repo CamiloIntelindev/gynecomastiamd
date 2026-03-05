@@ -1,0 +1,9 @@
+{
+  "id": "contact",
+  "title": "Contact Us",
+  "slug": "contact-us",
+  "description": "Get in touch with our gynecomastia specialists",
+  "order": 10,
+  "published": true,
+  "content": "<h2>Contact Gynecomastia MD</h2><p>Have questions about gynecomastia treatment? We're here to help.</p><h3>Get In Touch</h3><p>Phone: <a href='tel:+1234567890'>+1 (234) 567-8900</a></p><p>Email: <a href='mailto:info@gynecomastiamd.com'>info@gynecomastiamd.com</a></p><h3>Office Hours</h3><p>Monday - Friday: 9:00 AM - 5:00 PM<br/>Saturday: By appointment<br/>Sunday: Closed</p>"
+}

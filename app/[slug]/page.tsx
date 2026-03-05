@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
 interface Content {
-  id: number;
+  id: number | string;
   title: string;
   content: string;
   slug: string;
-  type: 'page' | 'post';
+  type: 'page' | 'post' | 'local';
 }
 
 export default function ContentPage() {
@@ -25,7 +25,19 @@ export default function ContentPage() {
         setLoading(true);
         setError(null);
 
-        // First try to fetch from pages
+        // First check local pages via API
+        const localPageResponse = await fetch(`/api/local-pages?slug=${slug}`);
+        const localPageData = await localPageResponse.json();
+        
+        if (localPageData.data) {
+          setContent({
+            ...localPageData.data,
+            type: 'local',
+          });
+          return;
+        }
+
+        // If not a local page, try to fetch from WordPress pages
         const pagesResponse = await fetch('/api/pages');
         const pagesData = await pagesResponse.json();
         
@@ -47,7 +59,7 @@ export default function ContentPage() {
           }
         }
 
-        // If not a page, try posts
+        // If not a page, try posts from WordPress
         const postsResponse = await fetch('/api/posts');
         const postsData = await postsResponse.json();
         
@@ -117,7 +129,7 @@ export default function ContentPage() {
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-800 mb-2">{content.title}</h1>
         <p className="text-gray-500 text-sm">
-          {content.type === 'page' ? 'Page' : 'Blog Post'}
+          {content.type === 'post' ? 'Blog Post' : 'Page'}
         </p>
       </header>
 
