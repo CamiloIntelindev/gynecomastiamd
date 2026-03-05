@@ -1,61 +1,66 @@
 /**
- * Cliente GraphQL para consultar WPGraphQL
+ * Cliente REST API de WordPress para consumir posts, páginas y otros contenidos
  */
 
-interface GraphQLResponse<T> {
-  data?: T;
-  errors?: Array<{ message: string }>;
+export interface WordPressError {
+  code: string;
+  message: string;
+  data?: {
+    status: number;
+  };
 }
 
-export async function fetchGraphQL<T>(
-  query: string,
-  variables?: Record<string, any>
+export interface WordPressResponse<T> {
+  data?: T;
+  error?: WordPressError;
+}
+
+/**
+ * Hacer una request a la API REST de WordPress con autenticación Basic
+ */
+export async function fetchWordPressAPI<T>(
+  endpoint: string,
+  options: RequestInit = {}
 ): Promise<T> {
-  const endpoint = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
-  
-  if (!endpoint) {
-    throw new Error('NEXT_PUBLIC_GRAPHQL_ENDPOINT is not defined');
+  const apiBase = process.env.NEXT_PUBLIC_API_ENDPOINT;
+
+  if (!apiBase) {
+    throw new Error('NEXT_PUBLIC_API_ENDPOINT is not defined');
   }
 
-  const headers: HeadersInit = {
+  const url = `${apiBase}${endpoint}`;
+
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
+    ...(options.headers as Record<string, string>),
   };
 
   // Agregar autenticación Basic si están disponibles las credenciales
-  if (process.env.GRAPHQL_USERNAME && process.env.GRAPHQL_PASSWORD) {
-    const credentials = btoa(
-      `${process.env.GRAPHQL_USERNAME}:${process.env.GRAPHQL_PASSWORD}`
-    );
+  if (process.env.API_USERNAME && process.env.API_PASSWORD) {
+    const credentials = btoa(`${process.env.API_USERNAME}:${process.env.API_PASSWORD}`);
     headers['Authorization'] = `Basic ${credentials}`;
   }
 
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      query,
-      variables: variables || {},
-    }),
-  });
+  try {
+    const response = await fetch(url, {
+      ...options,
+      headers,
+    });
 
-  if (!response.ok) {
-    throw new Error(
-      `GraphQL request failed with status ${response.status}: ${response.statusText}`
-    );
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(
+        `API request failed with status ${response.status}: ${
+          errorData.message || response.statusText
+        }`
+      );
+    }
+
+    const data = await response.json();
+    return data as T;
+  } catch (error) {
+    console.error(`Error fetching ${url}:`, error);
+    throw error;
   }
-
-  const result: GraphQLResponse<T> = await response.json();
-
-  if (result.errors) {
-    console.error('GraphQL errors:', result.errors);
-    throw new Error(
-      `GraphQL error: ${result.errors.map((e) => e.message).join(', ')}`
-    );
-  }
-
-  if (!result.data) {
-    throw new Error('No data returned from GraphQL query');
-  }
-
-  return result.data;
 }
+
