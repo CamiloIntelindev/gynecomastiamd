@@ -37,3 +37,28 @@ export const SINGLE_POST_QUERY_PARAMS = {
   ],
 };
 
+/**
+ * Parameters for fetching pages
+ */
+export const PAGE_QUERY_PARAMS = {
+  per_page: 100,
+  orderby: 'menu_order',
+  order: 'asc',
+  _fields: ['id', 'title', 'slug', 'status'],
+};
+
+/**
+ * Parameters for fetching a single page
+ */
+export const SINGLE_PAGE_QUERY_PARAMS = {
+  _fields: [
+    'id',
+    'title',
+    'content',
+    'excerpt',
+    'slug',
+    'featured_image',
+    'parent',
+  ],
+};
+
