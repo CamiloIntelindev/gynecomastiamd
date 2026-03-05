@@ -1,11 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { fetchWordPressAPI } from '@/lib/graphql';
-import { ENDPOINTS } from '@/lib/queries';
-
-// Force dynamic rendering to ensure environment variables are available at request time
-export const dynamic = 'force-dynamic';
 
 interface PostItem {
   id: number;
@@ -31,19 +26,21 @@ export default function Home() {
         setLoading(true);
         setError(null);
 
-        // Construir query string con parámetros
-        const queryParams = new URLSearchParams();
-        queryParams.append('per_page', '5');
-        queryParams.append('orderby', 'date');
-        queryParams.append('order', 'desc');
+        const response = await fetch('/api/posts');
+        
+        if (!response.ok) {
+          throw new Error(`API returned status ${response.status}`);
+        }
 
-        const data = await fetchWordPressAPI<PostItem[]>(
-          `${ENDPOINTS.POSTS}?${queryParams.toString()}`
-        );
+        const result = await response.json();
+        
+        if (result.error) {
+          throw new Error(result.error);
+        }
 
-        setPosts(data);
+        setPosts(result.data || []);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Error desconocido');
+        setError(err instanceof Error ? err.message : 'Unknown error');
         console.error('Error fetching posts:', err);
       } finally {
         setLoading(false);
@@ -92,10 +89,9 @@ export default function Home() {
                 }}
               >
                 Make sure that:
-                1. The REST endpoint is correct:{' '}
-                {process.env.NEXT_PUBLIC_API_ENDPOINT}
-                2. Credentials are configured in .env.local
-                3. The user {'{'}API_USERNAME{'}'} has permission to read posts
+                1. The API route /api/posts is working
+                2. Environment variables are configured in Vercel
+                3. The WordPress REST API endpoint is accessible
               </pre>
             </details>
           </div>
@@ -155,10 +151,10 @@ export default function Home() {
           <li>✅ Next.js project with TypeScript configured</li>
           <li>✅ REST API client ready for queries</li>
           <li>✅ WordPress REST API connection working</li>
+          <li>✅ Deployed to Vercel</li>
           <li>⏳ Create components for individual posts</li>
           <li>⏳ Implement dynamic pages</li>
           <li>⏳ Add search and filters</li>
-          <li>⏳ Deploy to Vercel</li>
         </ul>
       </section>
     </div>

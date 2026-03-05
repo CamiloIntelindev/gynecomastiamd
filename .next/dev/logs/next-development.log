@@ -321,3 +321,12 @@ Import traces:
 [00:15:03.306] Server  LOG     ✓ Compiled in 27ms
 [00:15:08.802] Server  LOG     ✓ Compiled in 9ms
 [00:15:12.390] Server  LOG       Reload env: .env.local
+[00:43:09.125] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Documents/Projects/gynecomastiamd/app/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:43:09.199] Server  LOG     ✓ Compiled in 0ms
+[00:43:09.581] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:21.779] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./Documents/Projects/gynecomastiamd/app/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:53:22.365] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:22.808] Browser ERROR   Error fetching posts: {}
+[00:53:26.332] Server  LOG     ✓ Compiled in 61ms
+[00:53:31.844] Server  LOG     ✓ Compiled in 32ms
+[00:53:36.614] Server  LOG     ✓ Compiled in 37ms
