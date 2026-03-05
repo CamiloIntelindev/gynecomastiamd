@@ -20,7 +20,7 @@ This directory contains all the local pages for your website. Each page is a JSO
   "description": "Short description for SEO (optional)",
   "order": 1,
   "published": true,
-  "content": "<h2>HTML content here</h2><p>HTML is fully supported.</p>"
+  "content": "<h2>HTML content here</h2><p>Full HTML is supported.</p>"
 }
 ```
 
@@ -32,7 +32,7 @@ This directory contains all the local pages for your website. Each page is a JSO
 - **description**: Meta description for SEO (optional)
 - **order**: Number that determines menu order (lower numbers appear first)
 - **published**: `true` to show on website, `false` to hide
-- **content**: HTML content of the page (supports all HTML tags)
+- **content**: Full HTML content of the page (all HTML tags supported)
 
 ## Examples
 
@@ -65,7 +65,7 @@ This directory contains all the local pages for your website. Each page is a JSO
 ## How Menu Works
 
 The navigation menu is **automatically generated** from:
-1. All local pages (in order by `order` field)
+1. All local pages (sorted by `order` field)
 2. Special items like Gallery and Blog
 
 You don't need to update the menu manually!
@@ -81,8 +81,8 @@ To hide a page from the website:
 
 - Always commit changes to deploy
 - The Home page is automatic and doesn't need to be defined
-- Special characters in slugs should be lowercase hyphens
-- HTML content is fully rendered
+- Special characters in slugs should be lowercase with hyphens
+- Full HTML content is rendered
 - Changes deploy within minutes to Vercel
 
 ## Useful HTML Snippets
